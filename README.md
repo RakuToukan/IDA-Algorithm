@@ -1,32 +1,32 @@
-# Implementasi Algoritma Iterative Deepening A* (IDA*)
+# Iterative Deepening A* (IDA*) Algorithm Implementation
 
 ![Visualisasi Graf](GrafAmerika.png)
 
-Repositori ini berisi implementasi algoritma **Iterative Deepening A* (IDA*)** untuk mencari rute terpendek antar kota. Proyek ini mendemonstrasikan bagaimana IDA* bekerja secara efisien dalam mengelola memori namun tetap memberikan hasil yang optimal.
+This repository contains a Python implementation of the **Iterative Deepening A* (IDA*)** algorithm to find the shortest path between cities. This project demonstrates how IDA* operates efficiently by managing memory usage while still guaranteeing an optimal solution.
 
-## 📋 Tentang Algoritma
-IDA* (Iterative Deepening A*) adalah algoritma pencarian yang menggabungkan strategi *Depth-First Search* (DFS) dengan keuntungan dari fungsi heuristik *A** search. 
+## 📋 About the Algorithm
+IDA* (Iterative Deepening A*) is a graph traversal and pathfinding algorithm that combines the memory efficiency of **Depth-First Search (DFS)** with the optimality of **A* search**.
 
-**Karakteristik Utama:**
-- **Fungsi Heuristik ($f(n) = g(n) + h(n)$):** Digunakan untuk mengestimasi biaya total dari titik awal ke tujuan.
-- **Threshold (Ambang Batas):** IDA* menggunakan batas biaya untuk membatasi pencarian DFS. Jika solusi tidak ditemukan, batas ini akan ditingkatkan berdasarkan nilai biaya terkecil yang melebihi ambang sebelumnya.
-- **Efisiensi Memori:** Sangat hemat memori dibandingkan A* karena tidak menyimpan semua *node* yang dikunjungi.
+**Key Characteristics:**
+- **Heuristic Function ($f(n) = g(n) + h(n)$):** Estimates the total cost from the start node to the goal.
+- **Thresholding:** Unlike A*, IDA* uses a cost threshold to limit DFS exploration. If no solution is found, the threshold is increased to the minimum cost that exceeded the previous limit.
+- **Memory Efficiency:** It is far more memory-efficient than A* because it does not store all visited nodes in memory.
 
-## 📍 Kasus Studi: Rute STL ke SSM
-Dalam implementasi ini, program mencari jalur optimal dari **Saint Louis (STL)** menuju **Sault Ste. Marie (SSM)**.
+## 📍 Case Study: STL to SSM Route
+In this implementation, the program calculates the optimal path from **Saint Louis (STL)** to **Sault Ste. Marie (SSM)**.
 
-**Hasil Pencarian:**
+**Search Results:**
 - **Path:** `STL -> KCY -> OMA -> DLH -> SSM`
 - **Total Cost:** 320
 
-## 🚀 Fitur Utama
-- **Algoritma IDA* Murni:** Implementasi fungsi rekursif dengan *thresholding*.
-- **Visualisasi Graf:** Menggunakan `NetworkX` dan `Matplotlib` untuk menampilkan keterhubungan antar kota dan bobot jalurnya.
-- **Visualisasi Jalur:** Node yang terpilih sebagai jalur utama akan diberi warna berbeda (Hijau) agar mudah dibedakan.
+## 🚀 Main Features
+- **Pure IDA* Implementation:** Recursive function logic with dynamic thresholding.
+- **Graph Visualization:** Built with `NetworkX` and `Matplotlib` to display city connectivity and edge weights.
+- **Path Highlighting:** The nodes and edges forming the final optimal path are highlighted in **Green** for easy identification.
 
-## 🛠️ Persiapan Lingkungan
-1. Pastikan Python 3.x telah terinstal.
-2. Instal library yang dibutuhkan:
+## 🛠️ Environment Setup
+1. Ensure you have Python 3.x installed.
+2. Install the required libraries:
    ```bash
    pip install networkx matplotlib numpy
 
