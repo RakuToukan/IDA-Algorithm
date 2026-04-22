@@ -1,0 +1,12 @@
+# Mengabaikan file log
+*.log
+
+# Mengabaikan folder build/output (Contoh untuk Unity/Node.js)
+IDA/
+
+# Mengabaikan file konfigurasi lokal atau rahasia
+.env
+.DS_Store
+
+# Mengabaikan folder library/tools (seperti node_modules di JS)
+node_modules/
