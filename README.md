@@ -1,41 +1,35 @@
-# Implementasi Algoritma Iterative Deepening A* (IDA*) - Penentuan Rute Terpendek
+# Implementasi Algoritma Iterative Deepening A* (IDA*)
 
-Proyek ini merupakan implementasi algoritma **Iterative Deepening A* (IDA*)** untuk mencari rute terpendek antar lokasi di wilayah Jawa Timur (khususnya sekitar Gedangan, Waru, dan Surabaya). Proyek ini disusun sebagai bagian dari tugas mata kuliah Kecerdasan Buatan (AI).
+![Visualisasi Graf](GrafAmerika.png)
 
-## 📋 Deskripsi Proyek
-IDA* adalah algoritma pencarian grafik yang menggabungkan strategi *Depth-First Search* (DFS) dengan keuntungan dari fungsi heuristik *A** search. Berbeda dengan A*, IDA* menggunakan ruang memori yang jauh lebih sedikit karena beroperasi seperti DFS namun tetap menjamin solusi optimal.
+Repositori ini berisi implementasi algoritma **Iterative Deepening A* (IDA*)** untuk mencari rute terpendek antar kota. Proyek ini mendemonstrasikan bagaimana IDA* bekerja secara efisien dalam mengelola memori namun tetap memberikan hasil yang optimal.
 
-Dalam proyek ini, kami memodelkan beberapa titik lokasi sebagai *nodes* dan jalan antar lokasi sebagai *edges* dengan bobot jarak.
+## 📋 Tentang Algoritma
+IDA* (Iterative Deepening A*) adalah algoritma pencarian yang menggabungkan strategi *Depth-First Search* (DFS) dengan keuntungan dari fungsi heuristik *A** search. 
 
-## 📍 Peta Lokasi (Graf)
-Kami menggunakan data lokasi koordinat asli untuk menghitung jarak antar titik menggunakan formula Haversine/Euclidean. Titik-titik yang digunakan meliputi:
-- Gedangan (GDN)
-- Waru Barat (WRB) & Waru Timur (WRT)
-- Gayungan (GYN)
-- Sedati (SDT)
-- Gunung Anyar (GNY)
-- Rungkut (RKT)
-- Tenggilis Mejoyo (TGY)
+**Karakteristik Utama:**
+- **Fungsi Heuristik ($f(n) = g(n) + h(n)$):** Digunakan untuk mengestimasi biaya total dari titik awal ke tujuan.
+- **Threshold (Ambang Batas):** IDA* menggunakan batas biaya untuk membatasi pencarian DFS. Jika solusi tidak ditemukan, batas ini akan ditingkatkan berdasarkan nilai biaya terkecil yang melebihi ambang sebelumnya.
+- **Efisiensi Memori:** Sangat hemat memori dibandingkan A* karena tidak menyimpan semua *node* yang dikunjungi.
 
-![Visualisasi Graf](GrafAmerika.png) 
-*(Catatan: Pastikan nama file gambar di repo sesuai dengan `Graf Amerika.png`)*
+## 📍 Kasus Studi: Rute STL ke SSM
+Dalam implementasi ini, program mencari jalur optimal dari **Saint Louis (STL)** menuju **Sault Ste. Marie (SSM)**.
+
+**Hasil Pencarian:**
+- **Path:** `STL -> KCY -> OMA -> DLH -> SSM`
+- **Total Cost:** 320
 
 ## 🚀 Fitur Utama
-- **Representasi Graf:** Menggunakan `NetworkX` untuk manajemen struktur data node dan edge.
-- **Fungsi Heuristik:** Menggunakan jarak garis lurus (Straight-Line Distance) antar koordinat sebagai estimasi biaya menuju tujuan.
-- **Visualisasi Interaktif:** Menggunakan `Folium` untuk menampilkan rute hasil pencarian di atas peta digital (OpenStreetMap).
-- **Analisis Performa:** Menghitung total biaya (jarak) dan membandingkan rute yang dihasilkan.
+- **Algoritma IDA* Murni:** Implementasi fungsi rekursif dengan *thresholding*.
+- **Visualisasi Graf:** Menggunakan `NetworkX` dan `Matplotlib` untuk menampilkan keterhubungan antar kota dan bobot jalurnya.
+- **Visualisasi Jalur:** Node yang terpilih sebagai jalur utama akan diberi warna berbeda (Hijau) agar mudah dibedakan.
 
-## 🛠️ Teknologi yang Digunakan
-- **Python 3.x**
-- **Library:**
-  - `NetworkX` (Struktur Graf)
-  - `Folium` (Visualisasi Peta)
-  - `Matplotlib` (Plotting)
-  - `Math` & `Geopy` (Perhitungan Jarak)
-
-## 📖 Cara Penggunaan
-1. Pastikan Anda memiliki lingkungan Python yang sudah terinstal.
-2. Instal dependensi yang diperlukan:
+## 🛠️ Persiapan Lingkungan
+1. Pastikan Python 3.x telah terinstal.
+2. Instal library yang dibutuhkan:
    ```bash
-   pip install networkx matplotlib folium
+   pip install networkx matplotlib numpy
+
+Credit :
+1. [@Jetluck](https://github.com/r6rap) - Algoritma IDA*
+2. [@Raku](https://github.com/RakuToukan) - Dokumentasi & Visualisasi Graf
