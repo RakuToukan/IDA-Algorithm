@@ -1,3 +1,2 @@
-Graf Amerika.png
-![Peta Amerika]('Graf Amerika.png')
+![Peta Amerika]('GrafAmerika.png')
 ![Preview](preview.png)
